@@ -21,11 +21,13 @@ function App() {
         <div className={`count-display ${getColorClass()}`}>{count}</div>
         <div className="button-group">
           <button
-            onClick={() => setCount(count - 1)}
-            className={`btn ${getColorClass()}`}
-          >
-            –
-          </button>
+  onClick={() => {
+    if (count > 0) setCount(count - 1);
+  }}
+  className={`btn ${getColorClass()}`}
+>
+  –
+</button>
           <button
             onClick={resetCount}
             className="btn reset"
