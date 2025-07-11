@@ -10,6 +10,10 @@ function App() {
     return 'green';
   }
 
+  const resetCount = () => {
+    setCount(0);
+  }
+
   return (
     <div className="app-root">
       <div className="counter-box">
@@ -21,6 +25,12 @@ function App() {
             className={`btn ${getColorClass()}`}
           >
             –
+          </button>
+          <button
+            onClick={resetCount}
+            className="btn reset"
+          >
+            ⟳
           </button>
           <button
             onClick={() => setCount(count + 1)}
